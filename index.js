@@ -1,3 +1,5 @@
+const LinkedList = require('./LinkedList')
+
 /* ===== 1. Understanding merge sort =====
 Given the following list of numbers 21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27, 43, 34, 46, 40
 [21, 1, 26, 45, 29, 28, 2, 9] // [16, 49, 39, 27, 43, 34, 46, 40]
@@ -96,3 +98,8 @@ function merge(left, right, array) {
     return array
 }
 console.log(mergeSort(ARRAY))
+
+/* ===== 5. =====
+Given a Linked List, sort the linked list using merge sort. You will need your linked list class from previous lesson to create the list and use all of its supplemental functions to solve this problem.
+*/
+
