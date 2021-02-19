@@ -175,4 +175,25 @@ function main() {
     const sorted = mergeSortList(list)
     display(sorted)
 }
-main()
+main()//output: [0, 1, 3, 4, 5]
+
+/* ===== 6. Bucket sort ======
+Write an O(n) algorithm to sort an array of integers, where you know in advance what the lowest and highest values are. You can't use arr.splice(), shift() or unshift() for this exercise.
+*/
+function bucketSort(array, min, max) {
+    let lowestIndex = array.indexOf(min)
+    console.log('lowest', lowestIndex)
+    swap(array, array[0], array[lowestIndex])
+    let highestIndex = array.indexOf(max)
+    console.log('highest', highestIndex)
+    swap(array, highestIndex, array.length-1)
+    console.log(array)
+    for(let i = 1; i < array.length - 2; i++) {
+        if(array[i] > array[i + 1]) {
+            swap(array, i, i + 1)
+            console.log(array)
+        }
+    }
+    return array
+}
+console.log(bucketSort([4, 7, 2, 8, 0, 3], 0, 8))//output: [ 0, 2, 3, 4, 7, 8 ]
