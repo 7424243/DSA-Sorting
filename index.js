@@ -197,3 +197,14 @@ function bucketSort(array, min, max) {
     return array
 }
 console.log(bucketSort([4, 7, 2, 8, 0, 3], 0, 8))//output: [ 0, 2, 3, 4, 7, 8 ]
+
+/* ===== 7. Sort in place =====
+Write an algorithm to shuffle an array into a random order in place (i.e., without creating a new array).
+*/
+function shuffle(array) {
+    for(let i = 0; i < array.length; i++) {
+        swap(array, i, Math.floor(Math.random() * array.length))
+    }
+    return array
+}
+console.log(shuffle([1, 2, 3, 4, 5, 6, 7]))//output: [1, 5, 7, 6, 3, 2, 4]
