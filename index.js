@@ -208,3 +208,21 @@ function shuffle(array) {
     return array
 }
 console.log(shuffle([1, 2, 3, 4, 5, 6, 7]))//output: [1, 5, 7, 6, 3, 2, 4]
+
+/* ===== 8. Sorting books =====
+Imagine that I gave you 20 books to sort in alphabetical order. Express this as an algorithm and then implement your algorithm.
+*/
+function sortBooks(array) {
+    let swaps = 0
+    for(let i = 0; i < array.length -1; i++) {
+        if(array[i].toLowerCase() > array[i + 1].toLowerCase()) {
+            swap(array, i, i + 1)
+            swaps++
+        }
+    }
+    if(swaps > 0) {
+        return sortBooks(array)
+    }
+    return array
+}
+console.log(sortBooks(['first book', 'third book', 'second book']))
